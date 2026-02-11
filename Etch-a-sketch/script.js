@@ -37,7 +37,10 @@ container.addEventListener("mousedown",function(e){
 })
 container.addEventListener("mouseup",()=>{isdrawing=false})
 container.addEventListener("dragenter",function(e){ isdrawing=false; if(e.target!==this){paint(e)}})
-container.addEventListener("touchmove",function(e){if(e.target!==this){paint(e)}})
+container.addEventListener("touchmove",function(e){
+    if(e.target!==this){
+        e.preventDefault();
+        paint(e)}})
 container.addEventListener("mouseleave",()=>{isdrawing=false})
 container.addEventListener("mouseover",function(e){
     if(isdrawing&&e.target!==this){
