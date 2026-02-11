@@ -1,0 +1,80 @@
+body{
+    overflow-x:hidden;
+    background-color:#FFF7ED;
+}
+#container{
+    width:80vw;
+    height:80vw;
+    max-height:60vh;
+    max-width:60vh;
+    margin:0 auto;
+    box-shadow:0 1px 10px 1px black;
+}
+h1{
+    text-align:center;
+    font-size:large;
+}
+label{
+    display:block;
+    text-align:center;
+    margin-top:30px;
+    font-size:20px;
+    font-weight:bold;
+}
+input:not(#clear-btn){
+    display:block;
+    margin:5px auto;
+}
+#colorpicker{
+    padding:0;
+    border:none;
+    width:75px;
+    height:75px;
+    background-color:#FFF7ED;
+    border-radius:20px;
+}
+h1{
+    font-size:50px;
+    margin:10px;
+}
+#rainbow,#color,#eraser,#clear-btn,#borders{
+    width:150px;
+    margin:10px auto;
+    text-align:center;
+    border:1px solid black;
+    padding:10px 20px;
+    background-color:#FED7AA;
+}
+#rainbow:hover,#color:hover,#eraser:hover,#clear-btn:hover,#borders:hover{
+    transform:scale(1.1);
+    transition:0.2s ease-in;
+    background-color: #FDBA74;
+}
+#clear-btn{
+    display:block;
+    width:191px;
+}
+#severalInputs{
+    border:1px solid;
+    width:20vw;
+    min-width:200px;
+    margin:25vh auto;
+    float:left;
+}
+main{
+    width: 60vw;
+    display:inline-block;
+    margin-top:10vh;
+}
+@media only screen and (max-width:900px){
+    main{
+        width:100vw;
+    }
+    #severalInputs{
+        width:100vw;
+        border:none;
+        margin:50px auto;
+        display:block;
+        float:none;
+    }
+}
