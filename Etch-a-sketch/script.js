@@ -29,33 +29,38 @@ toggleBorders.addEventListener("click",function(){
         Array.from(container.children).forEach((element)=>{if(element.style.border=="1px solid rgb(251, 146, 60)"){element.style.borderColor="#FFF7ED"}})
     }
 })
-
-container.addEventListener("mousedown",function(e){
+let isdrawing=false;
+container.addEventListener("pointerdown",function(e){
     isdrawing=true;
     if(e.target!==this){
-        paint(e);}
+        paint(e.target);}
 })
-container.addEventListener("mouseup",()=>{isdrawing=false})
-container.addEventListener("dragenter",function(e){ isdrawing=false; if(e.target!==this){paint(e)}})
-container.addEventListener("touchmove",function(e){
-    if(e.target!==this){
-        e.preventDefault();
-        paint(e)}})
-container.addEventListener("mouseleave",()=>{isdrawing=false})
-container.addEventListener("mouseover",function(e){
-    if(isdrawing&&e.target!==this){
-        paint(e);
-}})
+window.addEventListener("pointerup", () => isdrawing = false);
+container.addEventListener("pointerleave",()=>{isdrawing=false})
+container.addEventListener("pointermove", function(e) {
+    if (!isdrawing) return;
+
+    let target;
+    if (e.pointerType === "touch") {
+        target = document.elementFromPoint(e.clientX, e.clientY);
+    } else {
+        target = e.target;
+    }
+
+    if (target && target.parentElement === container) {
+        paint(target);
+    }
+});
 if (activated.id=="color"){
     colorpicker.addEventListener("input",()=>color=colorpicker.value);}
 function paint(e){
     if(activated.id=="rainbow"){
         color=`rgb(${Math.floor(Math.random()*256)} ${Math.floor(Math.random()*256)} ${Math.floor(Math.random()*256)})`}
-    e.target.style.backgroundColor=color;
+    e.style.backgroundColor=color;
     if(activated.id=="eraser"&&isActive){
-        e.target.style.border="1px solid rgb(251, 146, 60)"}
+        e.style.border="1px solid rgb(251, 146, 60)"}
    else{
-        e.target.style.border="1px solid " + color;   
+        e.style.border="1px solid " + color;   
 }
 }
 function activate(btn){

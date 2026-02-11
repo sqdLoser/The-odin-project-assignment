@@ -10,9 +10,14 @@ body{
     margin:0 auto;
     box-shadow:0 1px 10px 1px black;
 }
+#container div{
+    touch-action: none;
+    user-select: none;
+}
 h1{
     text-align:center;
-    font-size:large;
+    font-size:clamp(30px,10vw,40px);
+    margin:10px;
 }
 label{
     display:block;
@@ -33,10 +38,7 @@ input:not(#clear-btn){
     background-color:#FFF7ED;
     border-radius:20px;
 }
-h1{
-    font-size:50px;
-    margin:10px;
-}
+
 #rainbow,#color,#eraser,#clear-btn,#borders{
     width:150px;
     margin:10px auto;
@@ -60,11 +62,14 @@ h1{
     min-width:200px;
     margin:25vh auto;
     float:left;
+    min-width:320px;
 }
 main{
     width: 60vw;
     display:inline-block;
+    text-align:center;
     margin-top:10vh;
+    min-width:320px;
 }
 @media only screen and (max-width:900px){
     main{
