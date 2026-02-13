@@ -52,7 +52,7 @@ container.addEventListener("pointermove", function(e) {
     }
 });
 if (activated.id=="color"){
-    colorpicker.addEventListener("input",()=>color=colorpicker.value);}
+    colorpicker.addEventListener("change",()=>color=colorpicker.value);}
 function paint(e){
     if(activated.id=="rainbow"){
         color=`rgb(${Math.floor(Math.random()*256)} ${Math.floor(Math.random()*256)} ${Math.floor(Math.random()*256)})`}
