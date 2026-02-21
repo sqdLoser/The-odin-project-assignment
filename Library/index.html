@@ -7,6 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <nav id="navbar">
+        <span> Virtual Library</span>
+    </nav>
+    <main>
+        <div>
+        <button id="addBook" onclick="openingDialog()">Add book</button>
+        <dialog id="favDialog">
+            <form id="myForm">
+                <input type="text" name="name" id="bookName" required placeholder="Book Name">
+                <input type="text" id="bookAuthor" name="author" required placeholder="Author of the Book">
+                <input type="number" required name="pages" id="pageNumber" placeholder="Number of Pages" min="10" max="10000">
+                <div id="read"><label for="readCheckbox">Did you read this book?</label>
+                <input type="checkbox" name="read" id="readCheckbox"/></div>
+                <button id="submitBook" type="submit">Add Book</button>
+            </form>
+        </dialog>
+        <div id="books">
+        </div>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,79 @@
+#navbar{
+    padding:2vw;
+    display:block;
+    text-align:center;
+    background-color:#EEE;
+    border-bottom:2px solid;
+    font-size:clamp(20px,5vw,25px);
+    font-weight:bold;
+}
+body{
+    margin:0;
+}
+#addBook{
+    padding:1vw 4vh;
+    background-color:#40a829;
+    color:white;
+    border:none;
+    margin:2vh auto;
+    display:block;
+}
+
+#favDialog{
+    width:50%;
+    max-width:250px;
+    border:0;
+    height:300px;
+    background-color:#EEE;
+    border:1px solid;
+}
+input:not(input[type="checkbox"]){
+    height:10%;
+}
+#submitBook{
+    padding:10px 20px;
+    width:50%;
+    margin:0 auto;
+    background-color:#40a829;
+    color:white;
+    border:none;
+}
+#submitBook:hover{
+    opacity:0.7;
+    transition:1s ease
+}
+form{
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+}
+#books{
+    width:80%;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: repeat(auto-fit,185px);
+    gap:20px;
+    justify-content: center;
+}
+.readButton{
+    border:none;
+    padding:1vh 2vh;
+    margin:1vh auto;
+}
+.book{
+    border:1px solid;
+    text-align:center;
+    display:flex;
+    overflow-x:hidden;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.removeButton{
+    background-color:red;
+    color:white;
+    border:none;
+    padding:1vh 2vh;
+    display:block;
+}
